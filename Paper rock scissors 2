@@ -1,0 +1,79 @@
+mport java.util.Scanner;
+/*
+ * Blerta Toska
+ */
+
+class RockPaperScissors
+{
+    public static void main(String[] args)
+    {
+        //start game
+        System.out.println("Let's play Rock, Paper, Scissors!");
+        System.out.println("Say \"Rock\", \"Paper\", or \"Scissors\" to indicate your choice. Otherwise say \"Quit\" to quit."); 
+                      
+       
+        //initialize variables
+        int ties = 0; 
+        int wins = 0;
+        int losses = 0;
+        int rounds = 0;
+     
+
+        while (rounds<100)
+        //do the following if the user does not put in "quit"
+        {
+               
+            int Player = (int) (Math.random()*3) + 1;//computer generate random num
+            //print computer choice
+            if (Player == 1) System.out.println("Player chooses rock!");
+            if (Player == 2) System.out.println("Player chooses paper!");
+            if (Player == 3) System.out.println("Player chooses scissors!");
+         
+            int Computer = (int) (Math.random()*1) + 1;//computer generate random num
+            //print computer choice
+            if (Computer == 1) System.out.println("Computer chooses always rock!");
+            
+       
+            if(Player == Computer) //tie cases 
+                {
+                    System.out.println("It's a tie");
+                    ties++;
+                    rounds++;
+                }
+            else if (Player == 1 && Computer == 3) //user wins rock vs scissors
+                {
+                    System.out.println("you win!");
+                    wins++;
+                    rounds++;
+                }
+            else if (Player == 3 && Computer == 2) //user wins scissors vs paper
+                {
+                    System.out.println("you win!");
+                    wins++;
+                    rounds++;
+                }
+            else if (Player == 2 && Computer ==1) //user wins paper vs rock
+                {
+                    System.out.println("you win!");
+                    wins++;
+                    rounds++;
+                }
+            else //otherwise computer wins
+                {
+                    System.out.println("you lose.");
+                    losses++;
+                    rounds++;
+                }
+            System.out.println("wins:" + wins + "\nloses:" + losses + "\nties:" + ties + "\nrounds:" +rounds); //print out number of wins, ties, and loses
+            System.out.println("Let's play again! \n \n"); //start game again 
+            System.out.println("Are you enjoying your 100 rounds?");
+            
+        }
+        if (rounds==100) {
+        System.out.println("You have reached max rounds! \n \n"); //start game again
+        
+       } 
+     }
+   }     
+
+
