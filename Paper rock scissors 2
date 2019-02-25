@@ -1,4 +1,4 @@
-mport java.util.Scanner;
+import java.util.Scanner;
 /*
  * Blerta Toska
  */
@@ -9,7 +9,7 @@ class RockPaperScissors
     {
         //start game
         System.out.println("Let's play Rock, Paper, Scissors!");
-        System.out.println("Say \"Rock\", \"Paper\", or \"Scissors\" to indicate your choice. Otherwise say \"Quit\" to quit."); 
+        System.out.println("Play to 100 rounds!"); 
                       
        
         //initialize variables
@@ -20,7 +20,6 @@ class RockPaperScissors
      
 
         while (rounds<100)
-        //do the following if the user does not put in "quit"
         {
                
             int Player = (int) (Math.random()*3) + 1;//computer generate random num
@@ -40,18 +39,6 @@ class RockPaperScissors
                     ties++;
                     rounds++;
                 }
-            else if (Player == 1 && Computer == 3) //user wins rock vs scissors
-                {
-                    System.out.println("you win!");
-                    wins++;
-                    rounds++;
-                }
-            else if (Player == 3 && Computer == 2) //user wins scissors vs paper
-                {
-                    System.out.println("you win!");
-                    wins++;
-                    rounds++;
-                }
             else if (Player == 2 && Computer ==1) //user wins paper vs rock
                 {
                     System.out.println("you win!");
@@ -64,7 +51,7 @@ class RockPaperScissors
                     losses++;
                     rounds++;
                 }
-            System.out.println("wins:" + wins + "\nloses:" + losses + "\nties:" + ties + "\nrounds:" +rounds); //print out number of wins, ties, and loses
+            System.out.println("wins:" + wins + "\nloses:" + losses + "\nties:" + ties + "\nrounds:" +rounds); //print out number of wins, ties, loses, rounds
             System.out.println("Let's play again! \n \n"); //start game again 
             System.out.println("Are you enjoying your 100 rounds?");
             
